@@ -1,0 +1,22 @@
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+activate server
+Server->>Browser: HTML document
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+activate server
+Server->>Browser: stylesheet CSS
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+activate server
+Server->>Browser: script JS
+Note right of browser:przegladarka odpala skrypt ktory pobiera dane JSON
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+activate server
+Server->>Browser: JSON
+deactivate server
+
+Note right of browser: funkcja generuje strukture DOM i wyswietla notatki na ekranie
