@@ -1,0 +1,30 @@
+Note right of browser: uzytkownik wpisuje tekst i klika save
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note;
+activate server
+Note right of server: serwer zapisuje tekst w tablicy
+server->>Browser: HTTP 302 Piekierowywuje do /notes
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+activate server
+Server->>Browser: HTML document
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+activate server
+Server->>Browser: stylesheet CSS
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+activate server
+Server->>Browser: script JS
+Note right of browser:skrypt pobiera dane JSON i wypisuje
+deactivate server
+
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+activate server
+Server->>Browser: JSON
+deactivate server
+
+
+
