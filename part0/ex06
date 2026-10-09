@@ -1,0 +1,7 @@
+Wszystko to samo co w ex05
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+activate server
+Note right of browser: wyslane dane zapisuje jako JSON
+Note right of server: serwer zapisuje otzymana notatke w tablicy
+sever->>browser: HTTP 201 Created
+deactivate server
