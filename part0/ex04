@@ -4,11 +4,14 @@ participant Browser
 participant Server
 
 Note right of Browser: uzytkownik wpisuje tekst i klika save
+
 Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note;
 activate Server
-Note right of Server: serwer zapisuje tekst w tablicy
 Server-->>Browser: HTTP 302 Piekierowywuje do /notes
 deactivate Server
+
+
+Note right of Server: serwer zapisuje tekst w tablicy
 
 Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
 activate Server
@@ -23,8 +26,9 @@ deactivate server
 Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
 activate Server
 Server-->>Browser: script JS
-Note right of Browser: skrypt pobiera dane JSON i wypisuje
 deactivate Server
+
+Note right of Browser: skrypt pobiera dane JSON i wypisuje
 
 Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
 activate Server
